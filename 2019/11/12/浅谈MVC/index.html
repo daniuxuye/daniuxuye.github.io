@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//yoursite.com">
-  <title>Archives: 2020/2 | XY的博客</title>
+  <title>浅谈MVC | XY的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活感悟，技术分享，养生笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XY的博客">
-<meta property="og:url" content="archives/2020/02/index.html">
+  <meta name="description" content="《浅谈MVC》  这两天学习了MVC，按照惯例写篇博客总结一下。   何为MVCMVC是一种设计模式，它把系统分成三层：Model数据、View视图和Controller控制器。这个模式认为，程序不论简单或复杂，从结构上看，都可以分成三层。  &#x2F;&#x2F; View：是这个js模块对应在html中的部分，就是展示给用户看的那一部分    &#x2F;&#x2F; Model：可以从服务器获得数据，把数据传给Controlle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈MVC">
+<meta property="og:url" content="2019/11/12/%E6%B5%85%E8%B0%88MVC/index.html">
 <meta property="og:site_name" content="XY的博客">
-<meta property="og:description" content="生活感悟，技术分享，养生笔记">
+<meta property="og:description" content="《浅谈MVC》  这两天学习了MVC，按照惯例写篇博客总结一下。   何为MVCMVC是一种设计模式，它把系统分成三层：Model数据、View视图和Controller控制器。这个模式认为，程序不论简单或复杂，从结构上看，都可以分成三层。  &#x2F;&#x2F; View：是这个js模块对应在html中的部分，就是展示给用户看的那一部分    &#x2F;&#x2F; Model：可以从服务器获得数据，把数据传给Controlle">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-11-12T08:14:38.000Z">
+<meta property="article:modified_time" content="2020-02-27T06:15:23.785Z">
 <meta property="article:author" content="XY">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="js">
@@ -167,49 +169,176 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-浅谈MVC" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="archives/2020" target="_blank" rel="noopener" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="2020/02/27/hello-world/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-27T02:39:47.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="2020/02/27/hello-world/" target="_blank" rel="noopener">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      浅谈MVC
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="2019/11/12/浅谈MVC/" target="_blank" rel="noopener" class="archive-article-date">
+  	<time datetime="2019-11-12T08:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="《浅谈MVC》"><a href="#《浅谈MVC》" target="_blank" rel="noopener" class="headerlink" title="《浅谈MVC》"></a>《浅谈MVC》</h1><blockquote>
+<blockquote>
+<p>这两天学习了MVC，按照惯例写篇博客总结一下。</p>
+</blockquote>
+</blockquote>
+<h2 id="何为MVC"><a href="#何为MVC" target="_blank" rel="noopener" class="headerlink" title="何为MVC"></a>何为MVC</h2><p>MVC是一种设计模式，它把系统分成三层：Model数据、View视图和Controller控制器。<br>这个模式认为，程序不论简单或复杂，从结构上看，都可以分成三层。</p>
+<blockquote>
+// View：是这个js模块对应在html中的部分，就是展示给用户看的那一部分  
 
+<p>// Model：可以从服务器获得数据，把数据传给Controller。还要将Controller监听到的用户提交的数据上传到服务器。<br>// Controller：调用model的数据，用来更新view。还要监听用户在view上的操作，获取用户提交的数据，传给model。</p>
+</blockquote>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Model 主要负责 AJAX 请求或者 LocalStorage 存储。</span><br><span class="line">const m &#x3D; &#123;</span><br><span class="line">    data: &#123;程序需要操作的数据或信息&#125;,</span><br><span class="line">    create() &#123;增 &#125;,</span><br><span class="line">    delete() &#123; 删&#125;,</span><br><span class="line">    update() &#123;改&#125;,</span><br><span class="line">    get() &#123;查&#125;</span><br><span class="line">&#125;</span><br><span class="line">View 负责用户界面，前端 View 主要负责 HTML 渲染。</span><br><span class="line">const v &#x3D; &#123;</span><br><span class="line">    el: null,</span><br><span class="line">    &#x2F;&#x2F; 初始化html</span><br><span class="line">    html: &#96;呈现在页面上的html内容&#96;</span><br><span class="line">    init(container) &#123;</span><br><span class="line">        v.el &#x3D; $(container)</span><br><span class="line">    &#125;,</span><br><span class="line">    render() &#123;渲染页面&#125;</span><br><span class="line">&#125;</span><br><span class="line">Controller 控制器主要是打杂的，</span><br><span class="line">1.将content塞到页面里</span><br><span class="line">2.浏览器事件监听 - 用户点击视图后去更新数据（如 user）</span><br><span class="line">3.数据事件监听 - user 数据更新后去更新视图</span><br><span class="line">const c &#x3D; &#123;</span><br><span class="line">    init(container) &#123;&#125;)</span><br><span class="line">    &#125;, </span><br><span class="line">    events: &#123; 事件&#125;, </span><br><span class="line">    add() &#123;详细执行&#125;,</span><br><span class="line">    minus() &#123;详细执行&#125;,</span><br><span class="line">    mul() &#123;详细执行&#125;,</span><br><span class="line">    div() &#123;详细执行&#125;,</span><br><span class="line">    autoBindEvents() &#123;逻辑&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="EventBus"><a href="#EventBus" target="_blank" rel="noopener" class="headerlink" title="EventBus"></a>EventBus</h2><p>EventBus也是一种设计模式或框架，它能够简化各组件间的通信，让我们的代码书写变得简单，能有效的分离事件发送方和接收方(也就是解耦的意思)，能避免复杂和容易出错的依赖性和生命周期问题。  </p>
+<p><strong>EventBus的一些常用api</strong></p>
+<ul>
+<li>on（监听事件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.on(&#39;m:updated&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">      this.render(this.data)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></li>
+<li>trigger（触发事件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update(data) &#123;</span><br><span class="line">    Object.assign(m.data, data)&#x2F;&#x2F;把传进来的data直接放在m.data上</span><br><span class="line">    eventBus.trigger(&#39;m:updated&#39;)&#x2F;&#x2F;通过trigger自动更新数据</span><br><span class="line">    localStorage.setItem(&#39;n&#39;, m.data.n)&#x2F;&#x2F;储存数据</span><br></pre></td></tr></table></figure></li>
+<li>off（取消监听）</li>
+</ul>
+<h2 id="表驱动编程（Table-Driven-Methods）"><a href="#表驱动编程（Table-Driven-Methods）" target="_blank" rel="noopener" class="headerlink" title="表驱动编程（Table-Driven Methods）"></a>表驱动编程（Table-Driven Methods）</h2><p>表驱动法是一种编程模式，它可以将诸多事件进行简化的一种写法，因为这些事件涉及到很多的代码重复问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;举个栗子</span><br><span class="line">菜鸟的写法</span><br><span class="line">if(month &#x3D;&#x3D; 1)</span><br><span class="line">        days &#x3D;31;</span><br><span class="line">     else if(month &#x3D;&#x3D; 2)</span><br><span class="line">        days &#x3D; 29;</span><br><span class="line">     else if</span><br><span class="line">        ....</span><br><span class="line">表驱动的写法</span><br><span class="line">   months[12] &#x3D; &#123;31,29,31,30,31,30,31,31,30...&#125;;</span><br><span class="line">   days &#x3D; months[month -1];</span><br></pre></td></tr></table></figure>
+<h2 id="我对模块化的理解"><a href="#我对模块化的理解" target="_blank" rel="noopener" class="headerlink" title="我对模块化的理解"></a>我对模块化的理解</h2><p>如果只是写一个简简单单的静态小页面，代码量只有几十行那种，那根本用不着搞什么模块化，但现在web前端已经演变成大前端，项目越来越复杂，代码量越来越多。<br>在这种情况下，学习模块化编程思想就显得尤为重要。</p>
+<h3 id="那何为模块化呢？"><a href="#那何为模块化呢？" target="_blank" rel="noopener" class="headerlink" title="那何为模块化呢？"></a>那何为模块化呢？</h3><p>模块化是一种将系统分离成独立功能部分的方法，可将系统分割成独立的功能部分，严格定义模块接口、模块间具有透明性。</p>
+<h3 id="模块化有哪些优点："><a href="#模块化有哪些优点：" target="_blank" rel="noopener" class="headerlink" title="模块化有哪些优点："></a>模块化有哪些优点：</h3><ul>
+<li>可维护性（要是代码没有分模块全都堆在一起，出问题了，你找都不好找）</li>
+<li>方便模块间组合、分解</li>
+<li>方便单个模块功能调试、升级</li>
+<li>多人协作互不干扰</li>
+<li>可以分开做测试，简化测试</li>
+<li>避免重复造轮子，节省开发维护成本</li>
+</ul>
+<p>`</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:2019/11/12/浅谈MVC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="2020/01/11/浅谈-URL/" target="_blank" rel="noopener" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浅谈 URL
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="2019/10/27/jQuery/" target="_blank" rel="noopener" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -232,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

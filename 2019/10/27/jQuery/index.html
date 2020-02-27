@@ -6,15 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//yoursite.com">
-  <title>Archives: 2020/2 | XY的博客</title>
+  <title>jQuery | XY的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活感悟，技术分享，养生笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XY的博客">
-<meta property="og:url" content="archives/2020/02/index.html">
+  <meta name="description" content="jQuery设计思想jQuery是目前使用最广泛的javascript函数库。全世界排名前100万的网站，有46%使用jQuery，远远超过其他库。微软公司甚至把jQuery作为他们的官方库。因此学习jQuery对于网页开发者来说是很有必要的 废话不多说，下面是我关于jQuery设计思想的第一篇笔记。  本篇笔记参考之以下网址  阮一峰笔记http:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery">
+<meta property="og:url" content="2019/10/27/jQuery/index.html">
 <meta property="og:site_name" content="XY的博客">
-<meta property="og:description" content="生活感悟，技术分享，养生笔记">
+<meta property="og:description" content="jQuery设计思想jQuery是目前使用最广泛的javascript函数库。全世界排名前100万的网站，有46%使用jQuery，远远超过其他库。微软公司甚至把jQuery作为他们的官方库。因此学习jQuery对于网页开发者来说是很有必要的 废话不多说，下面是我关于jQuery设计思想的第一篇笔记。  本篇笔记参考之以下网址  阮一峰笔记http:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="2019/10/27/jQuery/images/jQuery.png">
+<meta property="article:published_time" content="2019-10-27T06:12:26.000Z">
+<meta property="article:modified_time" content="2020-02-27T06:13:20.670Z">
 <meta property="article:author" content="XY">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="js">
@@ -38,6 +41,7 @@
 <meta property="article:tag" content="css3">
 <meta property="article:tag" content="用户体验">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="2019/10/27/jQuery/images/jQuery.png">
   
     <link rel="alternative" href="/atom.xml" title="XY的博客" type="application/atom+xml">
   
@@ -167,49 +171,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jQuery" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="archives/2020" target="_blank" rel="noopener" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="2020/02/27/hello-world/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-27T02:39:47.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="2020/02/27/hello-world/" target="_blank" rel="noopener">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      jQuery
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="2019/10/27/jQuery/" target="_blank" rel="noopener" class="archive-article-date">
+  	<time datetime="2019-10-27T06:12:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jQuery设计思想"><a href="#jQuery设计思想" target="_blank" rel="noopener" class="headerlink" title="jQuery设计思想"></a>jQuery设计思想</h1><p><img src="images/jQuery.png" alt="jQuery"><br><a href="http://www.ruanyifeng.com/blog/2011/07/jquery_fundamentals.html" target="_blank" rel="noopener">jQuery</a>是目前使用最广泛的javascript函数库。全世界排名前100万的网站，有46%使用jQuery，远远超过其他库。微软公司甚至把jQuery作为他们的官方库。因此学习jQuery对于网页开发者来说是很有必要的</p>
+<p>废话不多说，下面是我关于jQuery设计思想的第一篇笔记。</p>
+<hr>
+<p>本篇笔记参考之以下网址</p>
+<ul>
+<li><p>阮一峰笔记<a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a></p>
+</li>
+<li><p>jQuery 中文文档<a href="https://www.jquery123.com/" target="_blank" rel="noopener">https://www.jquery123.com/</a></p>
+</li>
+</ul>
+<h3 id="【目录】"><a href="#【目录】" target="_blank" rel="noopener" class="headerlink" title="【目录】"></a>【目录】</h3><ol>
+<li>jQuery 一些业界共识</li>
+<li>jQuery 如何获取元素</li>
+<li>jQuery 的链式操作是怎样的</li>
+<li>jQuery 如何创建元素</li>
+<li>jQuery 如何移动元素</li>
+<li>jQuery 如何修改元素的属性</li>
+</ol>
+<h2 id="【正文部分】"><a href="#【正文部分】" target="_blank" rel="noopener" class="headerlink" title="【正文部分】"></a>【正文部分】</h2><h2 id="1-jQuery-一些业界共识"><a href="#1-jQuery-一些业界共识" target="_blank" rel="noopener" class="headerlink" title="1. jQuery 一些业界共识"></a>1. jQuery 一些业界共识</h2><ul>
+<li>高级的程序员写的代码往往可以化繁为简，这一个精神体现在编程的方方面面，比如<br><code>window.$ = window.jQuery</code><br><code>$div.get(0) = $div[0]</code><br><code>$.fn = $.prototype</code></li>
+<li>程序员们还会在一个jQuery构造的api对象前面加个标示，以表示它名花有主了，要不然谁知道它是DOM还是谁构造的<br><code>const $div = $(&#39;div#test&#39;)</code></li>
+</ul>
+<h2 id="2-jQuery-如何获取元素"><a href="#2-jQuery-如何获取元素" target="_blank" rel="noopener" class="headerlink" title="2. jQuery 如何获取元素"></a>2. jQuery 如何获取元素</h2><p>jQuery设计思想亮点之一，就是使用同一个函数，来完成取值（getter）和赋值（setter），即”取值器”与”赋值器”合一。到底是取值还是赋值，由函数的参数决定。<br>         $(‘h1’).html();//html()没有参数，意为取值<br>         $(‘h1’).html(‘hello’);//html有参数hello,表示要对h1进行赋值了<br>常见的取值和赋值函数如下:  </p>
+<ul>
+<li><p>　<a href="https://api.jquery.com/html/" target="_blank" rel="noopener">.html()</a> 取出或设置html内容</p>
+<ul>
+<li><p>　<a href="https://api.jquery.com/text/" target="_blank" rel="noopener">.text()</a> 取出或设置text内容</p>
+</li>
+<li><p>　<a href="http://api.jquery.com/attr/" target="_blank" rel="noopener">.attr()</a> 取出或设置某个属性的值</p>
+</li>
+<li><p>　<a href="https://api.jquery.com/width/" target="_blank" rel="noopener">.width()</a> 取出或设置某个元素的宽度</p>
+</li>
+<li><p>　<a href="https://api.jquery.com/height/" target="_blank" rel="noopener">.height()</a> 取出或设置某个元素的高度</p>
+</li>
+<li><p><a href="https://api.jquery.com/val/" target="_blank" rel="noopener">.val()</a> 取出某个表单元素的值  </p>
+</li>
+</ul>
+</li>
+</ul>
+<p>需要注意的是，如果结果集包含多个元素，那么赋值的时候，将对其中所有的元素赋值；取值的时候，则是只取出第一个元素的值（.text()例外，它取出所有元素的text内容）。</p>
+<h2 id="3-jQuery-的链式操作是怎样的"><a href="#3-jQuery-的链式操作是怎样的" target="_blank" rel="noopener" class="headerlink" title="3. jQuery 的链式操作是怎样的"></a>3. jQuery 的链式操作是怎样的</h2><p>jQuery设计思想亮点之一，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来，比如:<br>  <code>$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;);</code><br>拆分开来就是下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;) &#x2F;&#x2F;找到div元素</span><br><span class="line"></span><br><span class="line">　　　.find(&#39;h3&#39;) &#x2F;&#x2F;选择其中的h3元素</span><br><span class="line"></span><br><span class="line">　　　.eq(2) &#x2F;&#x2F;选择第3个h3元素</span><br><span class="line"></span><br><span class="line">　　　.html(&#39;Hello&#39;); &#x2F;&#x2F;将它的内容改为Hello</span><br></pre></td></tr></table></figure>
+<p>这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。</p>
+<p>jQuery还提供了<a href="https://api.jquery.com/end/" target="_blank" rel="noopener">.end()</a>方法，使得结果集可以后退一步：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;)</span><br><span class="line"></span><br><span class="line">　　　.find(&#39;h3&#39;)</span><br><span class="line"></span><br><span class="line">　　　.eq(2)</span><br><span class="line"></span><br><span class="line">　　　.html(&#39;Hello&#39;)</span><br><span class="line"></span><br><span class="line">　　　.end() &#x2F;&#x2F;退回到选中所有的h3元素的那一步</span><br><span class="line"></span><br><span class="line">　　　.eq(0) &#x2F;&#x2F;选中第一个h3元素</span><br><span class="line"></span><br><span class="line">　　　.html(&#39;World&#39;); &#x2F;&#x2F;将它的内容改为World</span><br></pre></td></tr></table></figure>
+<h2 id="4-jQuery-如何创建元素"><a href="#4-jQuery-如何创建元素" target="_blank" rel="noopener" class="headerlink" title="4. jQuery 如何创建元素"></a>4. jQuery 如何创建元素</h2><p>这个很简单需要添加什么就直接往$(‘     ‘)里加就好了，<br>比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;&lt;p&gt;Hello&lt;&#x2F;p&gt;&#39;);</span><br><span class="line"></span><br><span class="line">　　$(&#39;&lt;li class&#x3D;&quot;new&quot;&gt;new list item&lt;&#x2F;li&gt;&#39;);</span><br><span class="line"></span><br><span class="line">　　$(&#39;ul&#39;).append(&#39;&lt;li&gt;list item&lt;&#x2F;li&gt;&#39;);</span><br></pre></td></tr></table></figure>
+<h2 id="5-jQuery-如何移动元素"><a href="#5-jQuery-如何移动元素" target="_blank" rel="noopener" class="headerlink" title="5. jQuery 如何移动元素"></a>5. jQuery 如何移动元素</h2><p>jQuery设计思想亮点之一，就是提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。</p>
+<p>假定我们选中了一个div元素，需要把它移动到p元素后面。</p>
+<p>第一种方法是使用.insertAfter()，把div元素移动p元素后面：<br>   <code>$(&#39;div&#39;).insertAfter($(&#39;p&#39;));</code><br>第二种方法是使用.after()，把p元素加到div元素前面：<br>    <code>$(&#39;p&#39;).after($(&#39;div&#39;));</code><br>表面上看，这两种方法的效果是一样的，唯一的不同似乎只是操作视角的不同。但是实际上，它们有一个重大差别，那就是返回的元素不一样。第一种方法返回div元素，第二种方法返回p元素。</p>
+<h2 id="6-jQuery-如何修改元素的属性"><a href="#6-jQuery-如何修改元素的属性" target="_blank" rel="noopener" class="headerlink" title="6. jQuery 如何修改元素的属性"></a>6. jQuery 如何修改元素的属性</h2><ol>
+<li>attr()函数获取标签的某个属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. &#x2F;&#x2F;获取id为p的标签的属性值</span><br><span class="line">2. $(&#39;#p&#39;).attr(&#39;class&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>attr()修改或修改标签的属性值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. &#x2F;&#x2F;如果存在就是修改，如果不存在就是添加</span><br><span class="line">2.$(&#39;#p&#39;).attr(&#39;class&#39;,&#39;red&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>删除某个属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).removeAttr(&#39;name&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>添加class名称<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).addClass(&#39;blue&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>删除class名称<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).removeClass(&#39;yellow&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>有class就删除 没有就添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).toggleClass(&#39;asdf&#39;)</span><br></pre></td></tr></table></figure>
+(完)</li>
+</ol>
+<hr>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:2019/10/27/jQuery/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="2019/11/12/浅谈MVC/" target="_blank" rel="noopener" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浅谈MVC
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -232,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
