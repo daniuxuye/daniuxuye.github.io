@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//yoursite.com">
-  <title>Archives: 2020 | XY的博客</title>
+  <title>VUE数据响应式 | XY的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活感悟，技术分享，养生笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XY的博客">
-<meta property="og:url" content="archives/2020/index.html">
+  <meta name="description" content="我对Vue数据响应式的理解前言我这篇博客通过回答以下3个问题，来解释我对vue数据响应式的理解。  什么是响应式以及什么是Vue数据响应式？     为什么要设计Vue数据响应式？   VUE是如何实现数据响应式的？   1.什么是响应式以及什么是Vue数据响应式？我对响应式的理解：一个物体可以对外界的刺激做出反应，这个物体就是响应式的。那Vue数据响应式呢：就是vue可以对里面数据的变化做出反应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE数据响应式">
+<meta property="og:url" content="2020/02/28/VUE%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/index.html">
 <meta property="og:site_name" content="XY的博客">
-<meta property="og:description" content="生活感悟，技术分享，养生笔记">
+<meta property="og:description" content="我对Vue数据响应式的理解前言我这篇博客通过回答以下3个问题，来解释我对vue数据响应式的理解。  什么是响应式以及什么是Vue数据响应式？     为什么要设计Vue数据响应式？   VUE是如何实现数据响应式的？   1.什么是响应式以及什么是Vue数据响应式？我对响应式的理解：一个物体可以对外界的刺激做出反应，这个物体就是响应式的。那Vue数据响应式呢：就是vue可以对里面数据的变化做出反应">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-28T06:15:10.000Z">
+<meta property="article:modified_time" content="2020-02-28T06:15:53.033Z">
 <meta property="article:author" content="XY">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="js">
@@ -167,103 +169,153 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-VUE数据响应式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      VUE数据响应式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="archives/2020" target="_blank" rel="noopener" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener" class="archive-article-date">
+
+        
+        <a href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener" class="archive-article-date">
   	<time datetime="2020-02-28T06:15:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener">VUE数据响应式</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="我对Vue数据响应式的理解"><a href="#我对Vue数据响应式的理解" target="_blank" rel="noopener" class="headerlink" title="我对Vue数据响应式的理解"></a>我对Vue数据响应式的理解</h1><h2 id="前言"><a href="#前言" target="_blank" rel="noopener" class="headerlink" title="前言"></a>前言</h2><p>我这篇博客通过回答以下3个问题，来解释我对vue数据响应式的理解。</p>
+<ul>
+<li>什么是响应式以及什么是Vue数据响应式？    </li>
+<li>为什么要设计Vue数据响应式？  </li>
+<li>VUE是如何实现数据响应式的？</li>
+</ul>
+<hr>
+<h2 id="1-什么是响应式以及什么是Vue数据响应式？"><a href="#1-什么是响应式以及什么是Vue数据响应式？" target="_blank" rel="noopener" class="headerlink" title="1.什么是响应式以及什么是Vue数据响应式？"></a>1.什么是响应式以及什么是Vue数据响应式？</h2><p>我对响应式的理解：一个物体可以对外界的刺激做出反应，这个物体就是响应式的。<br>那Vue数据响应式呢：就是vue可以对里面数据的变化做出反应即渲染。用代码表示就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const vm &#x3D; new Vue(&#123;data:&#123;n: 0&#125;&#125;)  </span><br><span class="line"></span><br><span class="line">当修改 vm.n 或 data.n 时，render(data...) 中的 n 就会做出响应的响应。</span><br></pre></td></tr></table></figure>
+<h2 id="2-为什么要设计Vue数据响应式？"><a href="#2-为什么要设计Vue数据响应式？" target="_blank" rel="noopener" class="headerlink" title="2.为什么要设计Vue数据响应式？"></a>2.为什么要设计Vue数据响应式？</h2><p>我觉得尤雨溪设计初衷主要就是方便用户，用户每改一次数据就有一次数据响应，可以省很多操作。<br>这可能也是vue在中国这么火的原因之一。</p>
+<h2 id="3-VUE是如何实现数据响应式的？"><a href="#3-VUE是如何实现数据响应式的？" target="_blank" rel="noopener" class="headerlink" title="3.VUE是如何实现数据响应式的？"></a>3.VUE是如何实现数据响应式的？</h2><p>这个问题很多人都回答过，我这里就长话短说只说一下其实现数据响应式的大体思路，具体细节这里吧再详述。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const vm &#x3D; new Vue(&#123;data: myData&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>myData现在是房东，  </li>
+<li>vm成了房东的代理人也就是中介，  </li>
+<li>并且vm对myData的所有属性进行监控，  </li>
+<li>这样当myData的属性变了，就可以调用render(data)，  </li>
+<li>而UI=render（data）</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:2020/02/28/VUE数据响应式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="2020/02/27/hello-world/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-27T02:39:47.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="2020/02/27/hello-world/" target="_blank" rel="noopener" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="2020/02/27/hello-world/" target="_blank" rel="noopener">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="2020/01/11/浅谈-URL/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-01-11T13:16:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="2020/01/11/浅谈-URL/" target="_blank" rel="noopener">浅谈 URL</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -286,8 +338,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
