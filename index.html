@@ -325,6 +325,79 @@
 
 
   
+    <article id="post-vue修饰符-sync" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2020/02/02/vue修饰符-sync/" target="_blank" rel="noopener">`vue修饰符.sync`</a>
+    </h1>
+  
+
+        
+        <a href="2020/02/02/vue修饰符-sync/" target="_blank" rel="noopener" class="archive-article-date">
+  	<time datetime="2020-02-02T11:54:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sync-修饰符"><a href="#sync-修饰符" target="_blank" rel="noopener" class="headerlink" title=".sync 修饰符"></a>.sync 修饰符</h1><h2 id="出生背景"><a href="#出生背景" target="_blank" rel="noopener" class="headerlink" title="# 出生背景"></a># <strong>出生背景</strong></h2><p>|假设有这么一个需求：父组件 app 传入一个值给子组件 child，子组件更改这个值并渲染，且父组件同步渲染更新。 </p>
+<p>怎么办呢：</p>
+<ul>
+<li>在vue中子组件直接修改<code>prop</code>是不被允许的，原因是“双向绑定”维护起来比较麻烦</li>
+<li>既然直接在子组件上面改属性不可以，那我们可以这样：让子组件<code>“通知”</code>父组件，父组件接收到通知后再改变数据就可以了。</li>
+</ul>
+<p>具体操作就是：</p>
+<ul>
+<li>在子组件上$emit 触发事件，并传参</li>
+<li>在父组件上发布监听$event 可以获取到 $emit 传入的参数</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2020/02/02/vue修饰符-sync/" target="_blank" rel="noopener">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-浅谈-URL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
