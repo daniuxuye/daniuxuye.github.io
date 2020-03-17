@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//yoursite.com">
-  <title>XY的博客</title>
+  <title>实用：一键部署&#39; | XY的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活感悟，技术分享，养生笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XY的博客">
-<meta property="og:url" content="index.html">
+  <meta name="description" content="前言当你完成一个 Webpack&#x2F;Vue 项目时，将代码搞到仓库。  你可以全部部署到 github 仓库，使用 Github Pages 域名的 dist 路径来浏览页面。 也可以将 dist 目录与根目录分开在不同的仓库。 当然是物尽其用，利用 github 分支功能分开部署 步骤太繁琐？脚本一键部署！全部部署 |本地打包      首先进入项目根目录，本地打包。 1$ yarn build">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实用：一键部署&#39;">
+<meta property="og:url" content="2020/03/06/%E5%AE%9E%E7%94%A8%EF%BC%9A%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="XY的博客">
-<meta property="og:description" content="生活感悟，技术分享，养生笔记">
+<meta property="og:description" content="前言当你完成一个 Webpack&#x2F;Vue 项目时，将代码搞到仓库。  你可以全部部署到 github 仓库，使用 Github Pages 域名的 dist 路径来浏览页面。 也可以将 dist 目录与根目录分开在不同的仓库。 当然是物尽其用，利用 github 分支功能分开部署 步骤太繁琐？脚本一键部署！全部部署 |本地打包      首先进入项目根目录，本地打包。 1$ yarn build">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-06T13:12:08.000Z">
+<meta property="article:modified_time" content="2020-03-16T13:43:02.809Z">
 <meta property="article:author" content="XY">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="js">
@@ -167,168 +169,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="&#39;webpack/vue-实用：一键部署" class="article article-type-&#39;webpack/vue " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/03/16/数据结构/" target="_blank" rel="noopener">&#39;数据结构&#39;</a>
-    </h1>
-  
-
-        
-        <a href="2020/03/16/数据结构/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-03-16T13:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="笔记"><a href="#笔记" target="_blank" rel="noopener" class="headerlink" title="笔记"></a>笔记</h1><p>今天学了4钟算法排序：</p>
-<ul>
-<li>选择排序</li>
-<li>快速排序</li>
-<li>归并排序</li>
-<li>计数排序</li>
-</ul>
-<p>这里我挑选归并排序和计数排序复习一下</p>
-<h2 id="归并排序-merge-sort"><a href="#归并排序-merge-sort" target="_blank" rel="noopener" class="headerlink" title="归并排序(merge sort)"></a>归并排序(merge sort)</h2><p>何为归并思路</p>
-<ul>
-<li>先把数组拆分，拆分成2半，</li>
-<li>把每一半排好序，如果里面元素多不好排序怎么办，一直拆拆到只有一个为止。</li>
-<li>再把两边合并起来<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let mergeSort &#x3D; arr &#x3D;&gt;&#123;</span><br><span class="line">    let k &#x3D; arr.length</span><br><span class="line">    if(k&#x3D;&#x3D;&#x3D;1)&#123;return arr&#125;</span><br><span class="line">    let left &#x3D; arr.slice(0, Math.floor(k&#x2F;2))</span><br><span class="line">    let right &#x3D; arr.slice(Math.floor(k&#x2F;2))</span><br><span class="line">    return merge(mergeSort(left),mergeSort(right))</span><br><span class="line">&#125;</span><br><span class="line">let merge &#x3D; &#x3D;(a,b)&#x3D;&gt;&#123;</span><br><span class="line">    if(a.length &#x3D;&#x3D;&#x3D; 0) return b</span><br><span class="line">    if(b.length &#x3D;&#x3D;&#x3D; 0) return a</span><br><span class="line">    return a[0] &gt;b[0] ?</span><br><span class="line">       [b[0]].concat(merge(a, b.slice(1))) :</span><br><span class="line">       [a[0]].concat(merge(a.slice(1),b))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="计数排序"><a href="#计数排序" target="_blank" rel="noopener" class="headerlink" title="计数排序"></a>计数排序</h2><p>何为计数排序</p>
-<ul>
-<li>用哈希表作记录</li>
-<li>发现数字N就记N：1，如果再次出现N就加1</li>
-<li>最后把哈希表的key全部打出，假设N:m，那么N需要打印m次<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let countSort &#x3D; arr &#x3D;&gt;&#123;</span><br><span class="line">    let hashTable &#x3D; &#123;&#125;,max &#x3D; 0,result &#x3D; []</span><br><span class="line">    for(let i&#x3D;0; i&lt;arr.length; i++)&#123; &#x2F;&#x2F;遍历数组</span><br><span class="line">    if(!(arr[i] in hashTable))&#125;</span><br><span class="line">    hashTable[arr[i]]&#x3D;1</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    hashTable[arr[i]] +&#x3D;1</span><br><span class="line">&#125;</span><br><span class="line">if(arr[i]&gt;max)&#123;max &#x3D; arr[i]&#125;</span><br><span class="line">&#125;</span><br><span class="line">for(let j &#x3D;0; j&lt;&#x3D;max; j++)&#123; &#x2F;&#x2F;遍历哈希表</span><br><span class="line">if(j in hashTable)&#123;</span><br><span class="line">    for(let i &#x3D;0;i&lt;hashTable[j];i++)&#123;</span><br><span class="line">        return.push(j)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/03/16/数据结构/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-自学思考笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/03/12/自学思考笔记/" target="_blank" rel="noopener">&#39;自学思考笔记&#39;</a>
-    </h1>
-  
-
-        
-        <a href="2020/03/12/自学思考笔记/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-03-12T13:14:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="请写一个-min-函数，要求-min-numbers-能返回数组-numbers-中的最小数字。"><a href="#请写一个-min-函数，要求-min-numbers-能返回数组-numbers-中的最小数字。" target="_blank" rel="noopener" class="headerlink" title="请写一个 min 函数，要求 min(numbers) 能返回数组 numbers 中的最小数字。"></a>请写一个 min 函数，要求 min(numbers) 能返回数组 numbers 中的最小数字。</h2><h2 id="方方老师给提供的方法"><a href="#方方老师给提供的方法" target="_blank" rel="noopener" class="headerlink" title="方方老师给提供的方法"></a>方方老师给提供的方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let min &#x3D; (numbers) &#x3D;&gt; &#123;</span><br><span class="line">if(numbers.length &gt; 2)&#123;</span><br><span class="line">return min(</span><br><span class="line">[numbers[0], min(numbers.slice(1))]</span><br><span class="line">)</span><br><span class="line">&#125;else&#123;</span><br><span class="line">return Math.min.apply(null, numbers)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是一个递归函数<br>在函数内元素小于3位的时候才执行<code>Math.min.apply(null, numbers)</code>。<br>这个时候我对<code>Math.min.apply(null, numbers)</code>产生了浓厚的兴趣<br>我能不能直接把整个数组放进去呢？<br>于是有了下面一段实验</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let min &#x3D; (numbers) &#x3D;&gt; &#123;</span><br><span class="line">return Math.min.apply(null, numbers)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">min([2,4,6,1,2,4,76,4])</span><br><span class="line">显示结果为：1</span><br></pre></td></tr></table></figure>
-<p>具体为什么会这样我也不太清楚，这里先记录一下，为了以后弄明白之后回来再看看。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/03/12/自学思考笔记/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="&#39;webpack/vue-实用：一键部署" class="article article-type-&#39;webpack/vue  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/03/06/实用：一键部署/" target="_blank" rel="noopener">实用：一键部署&#39;</a>
+    <h1 class="article-title" itemprop="name">
+      实用：一键部署&#39;
     </h1>
   
 
@@ -400,16 +248,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/03/06/实用：一键部署/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:2020/03/06/实用：一键部署/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="2020/03/12/自学思考笔记/" target="_blank" rel="noopener" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          &#39;自学思考笔记&#39;
+        
+      </div>
+    </a>
+  
+  
+    <a href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VUE数据响应式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -429,532 +345,14 @@
 
 
 
-
   
-    <article id="post-VUE数据响应式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener">VUE数据响应式</a>
-    </h1>
   
 
-        
-        <a href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-28T06:15:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="我对Vue数据响应式的理解"><a href="#我对Vue数据响应式的理解" target="_blank" rel="noopener" class="headerlink" title="我对Vue数据响应式的理解"></a>我对Vue数据响应式的理解</h1><h2 id="前言"><a href="#前言" target="_blank" rel="noopener" class="headerlink" title="前言"></a>前言</h2><p>我这篇博客通过回答以下3个问题，来解释我对vue数据响应式的理解。</p>
-<ul>
-<li>什么是响应式以及什么是Vue数据响应式？    </li>
-<li>为什么要设计Vue数据响应式？  </li>
-<li>VUE是如何实现数据响应式的？</li>
-</ul>
-<hr>
-<h2 id="1-什么是响应式以及什么是Vue数据响应式？"><a href="#1-什么是响应式以及什么是Vue数据响应式？" target="_blank" rel="noopener" class="headerlink" title="1.什么是响应式以及什么是Vue数据响应式？"></a>1.什么是响应式以及什么是Vue数据响应式？</h2><p>我对响应式的理解：一个物体可以对外界的刺激做出反应，这个物体就是响应式的。<br>那Vue数据响应式呢：就是vue可以对里面数据的变化做出反应即渲染。用代码表示就是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const vm &#x3D; new Vue(&#123;data:&#123;n: 0&#125;&#125;)  </span><br><span class="line"></span><br><span class="line">当修改 vm.n 或 data.n 时，render(data...) 中的 n 就会做出响应的响应。</span><br></pre></td></tr></table></figure>
-<h2 id="2-为什么要设计Vue数据响应式？"><a href="#2-为什么要设计Vue数据响应式？" target="_blank" rel="noopener" class="headerlink" title="2.为什么要设计Vue数据响应式？"></a>2.为什么要设计Vue数据响应式？</h2><p>我觉得尤雨溪设计初衷主要就是方便用户，用户每改一次数据就有一次数据响应，可以省很多操作。<br>这可能也是vue在中国这么火的原因之一。</p>
-<h2 id="3-VUE是如何实现数据响应式的？"><a href="#3-VUE是如何实现数据响应式的？" target="_blank" rel="noopener" class="headerlink" title="3.VUE是如何实现数据响应式的？"></a>3.VUE是如何实现数据响应式的？</h2><p>这个问题很多人都回答过，我这里就长话短说只说一下其实现数据响应式的大体思路，具体细节这里吧再详述。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const vm &#x3D; new Vue(&#123;data: myData&#125;)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>myData现在是房东，  </li>
-<li>vm成了房东的代理人也就是中介，  </li>
-<li>并且vm对myData的所有属性进行监控，  </li>
-<li>这样当myData的属性变了，就可以调用render(data)，  </li>
-<li>而UI=render（data）</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/02/27/hello-world/" target="_blank" rel="noopener">Hello World</a>
-    </h1>
   
 
-        
-        <a href="2020/02/27/hello-world/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-27T02:39:47.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" target="_blank" rel="noopener" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" target="_blank" rel="noopener" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" target="_blank" rel="noopener" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" target="_blank" rel="noopener" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" target="_blank" rel="noopener" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/02/27/hello-world/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue修饰符-sync" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/02/02/vue修饰符-sync/" target="_blank" rel="noopener">`vue修饰符.sync`</a>
-    </h1>
   
 
-        
-        <a href="2020/02/02/vue修饰符-sync/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-02T11:54:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="sync-修饰符"><a href="#sync-修饰符" target="_blank" rel="noopener" class="headerlink" title=".sync 修饰符"></a>.sync 修饰符</h1><h2 id="出生背景"><a href="#出生背景" target="_blank" rel="noopener" class="headerlink" title="# 出生背景"></a># <strong>出生背景</strong></h2><p>|假设有这么一个需求：父组件 app 传入一个值给子组件 child，子组件更改这个值并渲染，且父组件同步渲染更新。 </p>
-<p>怎么办呢：</p>
-<ul>
-<li>在vue中子组件直接修改<code>prop</code>是不被允许的，原因是“双向绑定”维护起来比较麻烦</li>
-<li>既然直接在子组件上面改属性不可以，那我们可以这样：让子组件<code>“通知”</code>父组件，父组件接收到通知后再改变数据就可以了。</li>
-</ul>
-<p>具体操作就是：</p>
-<ul>
-<li>在子组件上$emit 触发事件，并传参</li>
-<li>在父组件上发布监听$event 可以获取到 $emit 传入的参数</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/02/02/vue修饰符-sync/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浅谈-URL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/01/11/浅谈-URL/" target="_blank" rel="noopener">浅谈 URL</a>
-    </h1>
-  
-
-        
-        <a href="2020/01/11/浅谈-URL/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-01-11T13:16:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="浅谈-URL"><a href="#浅谈-URL" target="_blank" rel="noopener" class="headerlink" title="浅谈 URL"></a>浅谈 URL</h1><h2 id="1-URL-包含哪几部分，每部分分别有什么作用"><a href="#1-URL-包含哪几部分，每部分分别有什么作用" target="_blank" rel="noopener" class="headerlink" title="1. URL 包含哪几部分，每部分分别有什么作用?"></a>1. URL 包含哪几部分，每部分分别有什么作用?</h2><p>URL指的是统一资源定位符<code>（Uniform Resource Locator）</code>。URL包含协议、域名或IP、端口号、路径、查询参数、锚点。</p>
-<p><code>http://</code>是协议，表明了浏览器必须使用何种协议，HTTP或HTTPS。 </p>
-<p><code>www.example.com</code>是域名。表明正在请求哪个web服务器。或者，可以直接使用IP address。</p>
-<p><code>:80</code>是端口。表示用于访问Web服务器上的资源的技术“门”。HTTP协议的标准端口，HTTP为80，HTTPS为443。</p>
-<p><code>/path/to/myfile.html</code>是网络服务器上资源的路径。在Web的早期阶段，像这样的路径表示Web服务器上的物理文件位置。</p>
-<p><code>?key1=value1&amp;key2=value2</code> 是查询参数。 这些参数是用 &amp; 符号分隔的键/值对列表。每个Web服务器都有自己关于参数的规则。</p>
-<p><code>#SomewhereInTheDocument</code>是锚点。 锚点表示资源中的一种“书签”，给浏览器显示位于该“加书签”位置的内容的方向。例如，在视频或音频文档上，浏览器将尝试转到锚代表的时间。</p>
-<h2 id="2-DNS-的作用是什么，nslookup-命令怎么用"><a href="#2-DNS-的作用是什么，nslookup-命令怎么用" target="_blank" rel="noopener" class="headerlink" title="2. DNS 的作用是什么，nslookup 命令怎么用?"></a>2. DNS 的作用是什么，nslookup 命令怎么用?</h2><p>DNS 是域名系统 (Domain Name System) ，它是由解析器和域名服务器组成的。域名服务器是保存有该网络中所有主机的域名和对应IP地址，并将域名转换为IP地址。有了DNS服务器，就不用输入IP地址来访问一个网站，而是可以通过输入网址访问。</p>
-<p>使用nslookup来解析域名<br><img src="../../static/images/%E6%B2%A1%E9%94%99%E5%B0%B1%E6%98%AF%E6%88%91.png" alt="nslookup"></p>
-<h2 id="3-IP-的作用是什么，ping-命令怎么用"><a href="#3-IP-的作用是什么，ping-命令怎么用" target="_blank" rel="noopener" class="headerlink" title="3. IP 的作用是什么，ping 命令怎么用?"></a>3. IP 的作用是什么，ping 命令怎么用?</h2><p>IP的作用是定位一台设备，封装数据报文以与其他设备交流。 使用ping命令查看IP地址，输入ping+域名。<br><img src="../../static/images/ping2.jpg" alt="ping"></p>
-<h2 id="4-域名是什么，分别哪几类域名"><a href="#4-域名是什么，分别哪几类域名" target="_blank" rel="noopener" class="headerlink" title="4. 域名是什么，分别哪几类域名?"></a>4. 域名是什么，分别哪几类域名?</h2><p>域名（Domain names）是互联网基础架构的关键部分。任何连上互联网的电脑都可以通过一个公共IP地址访问到。</p>
-<h3 id="域名的分类"><a href="#域名的分类" target="_blank" rel="noopener" class="headerlink" title="域名的分类"></a>域名的分类</h3><ul>
-<li>类别域名(国际域名)共有7个。com(商业公司);.net(网络服务);.org(组织协会等);.gov(政府部门);.edu(教育机构);.mil(军事领域);.int(国际组织)。</li>
-<li>国别域名(地理顶级域名)，共有243个国家和地区的代码，例如.CN代表中国，.UK代表英国。</li>
-</ul>
-<p>谢谢观看</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/01/11/浅谈-URL/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浅谈MVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2019/11/12/浅谈MVC/" target="_blank" rel="noopener">浅谈MVC</a>
-    </h1>
-  
-
-        
-        <a href="2019/11/12/浅谈MVC/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2019-11-12T08:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="《浅谈MVC》"><a href="#《浅谈MVC》" target="_blank" rel="noopener" class="headerlink" title="《浅谈MVC》"></a>《浅谈MVC》</h1><blockquote>
-<blockquote>
-<p>这两天学习了MVC，按照惯例写篇博客总结一下。</p>
-</blockquote>
-</blockquote>
-<h2 id="何为MVC"><a href="#何为MVC" target="_blank" rel="noopener" class="headerlink" title="何为MVC"></a>何为MVC</h2><p>MVC是一种设计模式，它把系统分成三层：Model数据、View视图和Controller控制器。<br>这个模式认为，程序不论简单或复杂，从结构上看，都可以分成三层。</p>
-<blockquote>
-// View：是这个js模块对应在html中的部分，就是展示给用户看的那一部分  
-
-<p>// Model：可以从服务器获得数据，把数据传给Controller。还要将Controller监听到的用户提交的数据上传到服务器。<br>// Controller：调用model的数据，用来更新view。还要监听用户在view上的操作，获取用户提交的数据，传给model。</p>
-</blockquote>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Model 主要负责 AJAX 请求或者 LocalStorage 存储。</span><br><span class="line">const m &#x3D; &#123;</span><br><span class="line">    data: &#123;程序需要操作的数据或信息&#125;,</span><br><span class="line">    create() &#123;增 &#125;,</span><br><span class="line">    delete() &#123; 删&#125;,</span><br><span class="line">    update() &#123;改&#125;,</span><br><span class="line">    get() &#123;查&#125;</span><br><span class="line">&#125;</span><br><span class="line">View 负责用户界面，前端 View 主要负责 HTML 渲染。</span><br><span class="line">const v &#x3D; &#123;</span><br><span class="line">    el: null,</span><br><span class="line">    &#x2F;&#x2F; 初始化html</span><br><span class="line">    html: &#96;呈现在页面上的html内容&#96;</span><br><span class="line">    init(container) &#123;</span><br><span class="line">        v.el &#x3D; $(container)</span><br><span class="line">    &#125;,</span><br><span class="line">    render() &#123;渲染页面&#125;</span><br><span class="line">&#125;</span><br><span class="line">Controller 控制器主要是打杂的，</span><br><span class="line">1.将content塞到页面里</span><br><span class="line">2.浏览器事件监听 - 用户点击视图后去更新数据（如 user）</span><br><span class="line">3.数据事件监听 - user 数据更新后去更新视图</span><br><span class="line">const c &#x3D; &#123;</span><br><span class="line">    init(container) &#123;&#125;)</span><br><span class="line">    &#125;, </span><br><span class="line">    events: &#123; 事件&#125;, </span><br><span class="line">    add() &#123;详细执行&#125;,</span><br><span class="line">    minus() &#123;详细执行&#125;,</span><br><span class="line">    mul() &#123;详细执行&#125;,</span><br><span class="line">    div() &#123;详细执行&#125;,</span><br><span class="line">    autoBindEvents() &#123;逻辑&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="EventBus"><a href="#EventBus" target="_blank" rel="noopener" class="headerlink" title="EventBus"></a>EventBus</h2><p>EventBus也是一种设计模式或框架，它能够简化各组件间的通信，让我们的代码书写变得简单，能有效的分离事件发送方和接收方(也就是解耦的意思)，能避免复杂和容易出错的依赖性和生命周期问题。  </p>
-<p><strong>EventBus的一些常用api</strong></p>
-<ul>
-<li>on（监听事件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.on(&#39;m:updated&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">      this.render(this.data)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></li>
-<li>trigger（触发事件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update(data) &#123;</span><br><span class="line">    Object.assign(m.data, data)&#x2F;&#x2F;把传进来的data直接放在m.data上</span><br><span class="line">    eventBus.trigger(&#39;m:updated&#39;)&#x2F;&#x2F;通过trigger自动更新数据</span><br><span class="line">    localStorage.setItem(&#39;n&#39;, m.data.n)&#x2F;&#x2F;储存数据</span><br></pre></td></tr></table></figure></li>
-<li>off（取消监听）</li>
-</ul>
-<h2 id="表驱动编程（Table-Driven-Methods）"><a href="#表驱动编程（Table-Driven-Methods）" target="_blank" rel="noopener" class="headerlink" title="表驱动编程（Table-Driven Methods）"></a>表驱动编程（Table-Driven Methods）</h2><p>表驱动法是一种编程模式，它可以将诸多事件进行简化的一种写法，因为这些事件涉及到很多的代码重复问题。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;举个栗子</span><br><span class="line">菜鸟的写法</span><br><span class="line">if(month &#x3D;&#x3D; 1)</span><br><span class="line">        days &#x3D;31;</span><br><span class="line">     else if(month &#x3D;&#x3D; 2)</span><br><span class="line">        days &#x3D; 29;</span><br><span class="line">     else if</span><br><span class="line">        ....</span><br><span class="line">表驱动的写法</span><br><span class="line">   months[12] &#x3D; &#123;31,29,31,30,31,30,31,31,30...&#125;;</span><br><span class="line">   days &#x3D; months[month -1];</span><br></pre></td></tr></table></figure>
-<h2 id="我对模块化的理解"><a href="#我对模块化的理解" target="_blank" rel="noopener" class="headerlink" title="我对模块化的理解"></a>我对模块化的理解</h2><p>如果只是写一个简简单单的静态小页面，代码量只有几十行那种，那根本用不着搞什么模块化，但现在web前端已经演变成大前端，项目越来越复杂，代码量越来越多。<br>在这种情况下，学习模块化编程思想就显得尤为重要。</p>
-<h3 id="那何为模块化呢？"><a href="#那何为模块化呢？" target="_blank" rel="noopener" class="headerlink" title="那何为模块化呢？"></a>那何为模块化呢？</h3><p>模块化是一种将系统分离成独立功能部分的方法，可将系统分割成独立的功能部分，严格定义模块接口、模块间具有透明性。</p>
-<h3 id="模块化有哪些优点："><a href="#模块化有哪些优点：" target="_blank" rel="noopener" class="headerlink" title="模块化有哪些优点："></a>模块化有哪些优点：</h3><ul>
-<li>可维护性（要是代码没有分模块全都堆在一起，出问题了，你找都不好找）</li>
-<li>方便模块间组合、分解</li>
-<li>方便单个模块功能调试、升级</li>
-<li>多人协作互不干扰</li>
-<li>可以分开做测试，简化测试</li>
-<li>避免重复造轮子，节省开发维护成本</li>
-</ul>
-<p>`</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2019/11/12/浅谈MVC/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2019/10/27/jQuery/" target="_blank" rel="noopener">jQuery</a>
-    </h1>
-  
-
-        
-        <a href="2019/10/27/jQuery/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2019-10-27T06:12:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jQuery设计思想"><a href="#jQuery设计思想" target="_blank" rel="noopener" class="headerlink" title="jQuery设计思想"></a>jQuery设计思想</h1><p><img src="images/jQuery.png" alt="jQuery"><br><a href="http://www.ruanyifeng.com/blog/2011/07/jquery_fundamentals.html" target="_blank" rel="noopener">jQuery</a>是目前使用最广泛的javascript函数库。全世界排名前100万的网站，有46%使用jQuery，远远超过其他库。微软公司甚至把jQuery作为他们的官方库。因此学习jQuery对于网页开发者来说是很有必要的</p>
-<p>废话不多说，下面是我关于jQuery设计思想的第一篇笔记。</p>
-<hr>
-<p>本篇笔记参考之以下网址</p>
-<ul>
-<li><p>阮一峰笔记<a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a></p>
-</li>
-<li><p>jQuery 中文文档<a href="https://www.jquery123.com/" target="_blank" rel="noopener">https://www.jquery123.com/</a></p>
-</li>
-</ul>
-<h3 id="【目录】"><a href="#【目录】" target="_blank" rel="noopener" class="headerlink" title="【目录】"></a>【目录】</h3><ol>
-<li>jQuery 一些业界共识</li>
-<li>jQuery 如何获取元素</li>
-<li>jQuery 的链式操作是怎样的</li>
-<li>jQuery 如何创建元素</li>
-<li>jQuery 如何移动元素</li>
-<li>jQuery 如何修改元素的属性</li>
-</ol>
-<h2 id="【正文部分】"><a href="#【正文部分】" target="_blank" rel="noopener" class="headerlink" title="【正文部分】"></a>【正文部分】</h2><h2 id="1-jQuery-一些业界共识"><a href="#1-jQuery-一些业界共识" target="_blank" rel="noopener" class="headerlink" title="1. jQuery 一些业界共识"></a>1. jQuery 一些业界共识</h2><ul>
-<li>高级的程序员写的代码往往可以化繁为简，这一个精神体现在编程的方方面面，比如<br><code>window.$ = window.jQuery</code><br><code>$div.get(0) = $div[0]</code><br><code>$.fn = $.prototype</code></li>
-<li>程序员们还会在一个jQuery构造的api对象前面加个标示，以表示它名花有主了，要不然谁知道它是DOM还是谁构造的<br><code>const $div = $(&#39;div#test&#39;)</code></li>
-</ul>
-<h2 id="2-jQuery-如何获取元素"><a href="#2-jQuery-如何获取元素" target="_blank" rel="noopener" class="headerlink" title="2. jQuery 如何获取元素"></a>2. jQuery 如何获取元素</h2><p>jQuery设计思想亮点之一，就是使用同一个函数，来完成取值（getter）和赋值（setter），即”取值器”与”赋值器”合一。到底是取值还是赋值，由函数的参数决定。<br>         $(‘h1’).html();//html()没有参数，意为取值<br>         $(‘h1’).html(‘hello’);//html有参数hello,表示要对h1进行赋值了<br>常见的取值和赋值函数如下:  </p>
-<ul>
-<li><p>　<a href="https://api.jquery.com/html/" target="_blank" rel="noopener">.html()</a> 取出或设置html内容</p>
-<ul>
-<li><p>　<a href="https://api.jquery.com/text/" target="_blank" rel="noopener">.text()</a> 取出或设置text内容</p>
-</li>
-<li><p>　<a href="http://api.jquery.com/attr/" target="_blank" rel="noopener">.attr()</a> 取出或设置某个属性的值</p>
-</li>
-<li><p>　<a href="https://api.jquery.com/width/" target="_blank" rel="noopener">.width()</a> 取出或设置某个元素的宽度</p>
-</li>
-<li><p>　<a href="https://api.jquery.com/height/" target="_blank" rel="noopener">.height()</a> 取出或设置某个元素的高度</p>
-</li>
-<li><p><a href="https://api.jquery.com/val/" target="_blank" rel="noopener">.val()</a> 取出某个表单元素的值  </p>
-</li>
-</ul>
-</li>
-</ul>
-<p>需要注意的是，如果结果集包含多个元素，那么赋值的时候，将对其中所有的元素赋值；取值的时候，则是只取出第一个元素的值（.text()例外，它取出所有元素的text内容）。</p>
-<h2 id="3-jQuery-的链式操作是怎样的"><a href="#3-jQuery-的链式操作是怎样的" target="_blank" rel="noopener" class="headerlink" title="3. jQuery 的链式操作是怎样的"></a>3. jQuery 的链式操作是怎样的</h2><p>jQuery设计思想亮点之一，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来，比如:<br>  <code>$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;);</code><br>拆分开来就是下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;) &#x2F;&#x2F;找到div元素</span><br><span class="line"></span><br><span class="line">　　　.find(&#39;h3&#39;) &#x2F;&#x2F;选择其中的h3元素</span><br><span class="line"></span><br><span class="line">　　　.eq(2) &#x2F;&#x2F;选择第3个h3元素</span><br><span class="line"></span><br><span class="line">　　　.html(&#39;Hello&#39;); &#x2F;&#x2F;将它的内容改为Hello</span><br></pre></td></tr></table></figure>
-<p>这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。</p>
-<p>jQuery还提供了<a href="https://api.jquery.com/end/" target="_blank" rel="noopener">.end()</a>方法，使得结果集可以后退一步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;)</span><br><span class="line"></span><br><span class="line">　　　.find(&#39;h3&#39;)</span><br><span class="line"></span><br><span class="line">　　　.eq(2)</span><br><span class="line"></span><br><span class="line">　　　.html(&#39;Hello&#39;)</span><br><span class="line"></span><br><span class="line">　　　.end() &#x2F;&#x2F;退回到选中所有的h3元素的那一步</span><br><span class="line"></span><br><span class="line">　　　.eq(0) &#x2F;&#x2F;选中第一个h3元素</span><br><span class="line"></span><br><span class="line">　　　.html(&#39;World&#39;); &#x2F;&#x2F;将它的内容改为World</span><br></pre></td></tr></table></figure>
-<h2 id="4-jQuery-如何创建元素"><a href="#4-jQuery-如何创建元素" target="_blank" rel="noopener" class="headerlink" title="4. jQuery 如何创建元素"></a>4. jQuery 如何创建元素</h2><p>这个很简单需要添加什么就直接往$(‘     ‘)里加就好了，<br>比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;&lt;p&gt;Hello&lt;&#x2F;p&gt;&#39;);</span><br><span class="line"></span><br><span class="line">　　$(&#39;&lt;li class&#x3D;&quot;new&quot;&gt;new list item&lt;&#x2F;li&gt;&#39;);</span><br><span class="line"></span><br><span class="line">　　$(&#39;ul&#39;).append(&#39;&lt;li&gt;list item&lt;&#x2F;li&gt;&#39;);</span><br></pre></td></tr></table></figure>
-<h2 id="5-jQuery-如何移动元素"><a href="#5-jQuery-如何移动元素" target="_blank" rel="noopener" class="headerlink" title="5. jQuery 如何移动元素"></a>5. jQuery 如何移动元素</h2><p>jQuery设计思想亮点之一，就是提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。</p>
-<p>假定我们选中了一个div元素，需要把它移动到p元素后面。</p>
-<p>第一种方法是使用.insertAfter()，把div元素移动p元素后面：<br>   <code>$(&#39;div&#39;).insertAfter($(&#39;p&#39;));</code><br>第二种方法是使用.after()，把p元素加到div元素前面：<br>    <code>$(&#39;p&#39;).after($(&#39;div&#39;));</code><br>表面上看，这两种方法的效果是一样的，唯一的不同似乎只是操作视角的不同。但是实际上，它们有一个重大差别，那就是返回的元素不一样。第一种方法返回div元素，第二种方法返回p元素。</p>
-<h2 id="6-jQuery-如何修改元素的属性"><a href="#6-jQuery-如何修改元素的属性" target="_blank" rel="noopener" class="headerlink" title="6. jQuery 如何修改元素的属性"></a>6. jQuery 如何修改元素的属性</h2><ol>
-<li>attr()函数获取标签的某个属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. &#x2F;&#x2F;获取id为p的标签的属性值</span><br><span class="line">2. $(&#39;#p&#39;).attr(&#39;class&#39;)</span><br></pre></td></tr></table></figure></li>
-<li>attr()修改或修改标签的属性值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. &#x2F;&#x2F;如果存在就是修改，如果不存在就是添加</span><br><span class="line">2.$(&#39;#p&#39;).attr(&#39;class&#39;,&#39;red&#39;)</span><br></pre></td></tr></table></figure></li>
-<li>删除某个属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).removeAttr(&#39;name&#39;)</span><br></pre></td></tr></table></figure></li>
-<li>添加class名称<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).addClass(&#39;blue&#39;)</span><br></pre></td></tr></table></figure></li>
-<li>删除class名称<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).removeClass(&#39;yellow&#39;)</span><br></pre></td></tr></table></figure></li>
-<li>有class就删除 没有就添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#p&#39;).toggleClass(&#39;asdf&#39;)</span><br></pre></td></tr></table></figure>
-(完)</li>
-</ol>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2019/10/27/jQuery/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -977,8 +375,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
