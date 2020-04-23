@@ -169,6 +169,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-华为音乐播放器学习思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2020/04/17/华为音乐播放器学习思考/" target="_blank" rel="noopener">华为音乐播放器学习思考</a>
+    </h1>
+  
+
+        
+        <a href="2020/04/17/华为音乐播放器学习思考/" target="_blank" rel="noopener" class="archive-article-date">
+  	<time datetime="2020-04-17T03:10:03.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="华为音乐播放器学习思考"><a href="#华为音乐播放器学习思考" target="_blank" rel="noopener" class="headerlink" title="华为音乐播放器学习思考"></a>华为音乐播放器学习思考</h1><h2 id="关于如何实现目前是第一首歌曲播放上一曲时，如何跳转到最后一首歌的实现过程。"><a href="#关于如何实现目前是第一首歌曲播放上一曲时，如何跳转到最后一首歌的实现过程。" target="_blank" rel="noopener" class="headerlink" title="关于如何实现目前是第一首歌曲播放上一曲时，如何跳转到最后一首歌的实现过程。"></a>关于如何实现目前是第一首歌曲播放上一曲时，如何跳转到最后一首歌的实现过程。</h2><ol>
+<li>假设一共有n首歌曲，现在要实现的就是：怎么做能让：0———&gt;n-1，</li>
+<li>普通情况下既要实现：n———&gt;n-1;</li>
+<li>上面可以写成：<code>self.currentIndex = self.currentIndex - 1</code></li>
+<li>我发现如果<code>self.songList.length + self.currentIndex - 1</code>貌似就是我想要的答案。</li>
+<li>还不能高兴的太早，还得看看有没有特殊情况。</li>
+<li>结果发现有的不行，比如说：<code>当有2首音乐时：self.songList.length=2，当self.currentIndex=1时，self.songList.length + self.currentIndex - 1=2，而2不在self.currentIndex范围里了</code></li>
+<li>最后发现<code>(self.songList.length + self.currentIndex - 1) % self.songList.length</code>可以适应任何情况。</li>
+</ol>
+<h2 id="关于要实现开始播放和暂停按钮在不同情况下相互转换的是实现方法。"><a href="#关于要实现开始播放和暂停按钮在不同情况下相互转换的是实现方法。" target="_blank" rel="noopener" class="headerlink" title="关于要实现开始播放和暂停按钮在不同情况下相互转换的是实现方法。"></a>关于要实现开始播放和暂停按钮在不同情况下相互转换的是实现方法。</h2><ol>
+<li>我的思路是一开始是暂停键，当它被启动时，把暂停键换成开始键，再按一下再变成暂停键。</li>
+<li>这个时候我觉得单单靠点击的次数为单偶数来判断是否为播放还是暂停，不利于后期维护和bug排查，所以得想要个变量用来表示目前其的状态，</li>
+<li>于是playing和pause2个变量刚好可以满足我的需求。</li>
+<li>最终代码就是:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let self &#x3D; this</span><br><span class="line">this.$(&#39;.btn-play-pause&#39;).onclick &#x3D; function() &#123;</span><br><span class="line">  if(this.classList.contains(&#39;playing&#39;)) &#123;</span><br><span class="line">    self.audio.pause()</span><br><span class="line">    this.classList.remove(&#39;playing&#39;)</span><br><span class="line">    this.classList.add(&#39;pause&#39;)</span><br><span class="line">    this.querySelector(&#39;use&#39;).setAttribute(&#39;xlink:href&#39;, &#39;#icon-play&#39;)</span><br><span class="line">  &#125; else if(this.classList.contains(&#39;pause&#39;)) &#123;</span><br><span class="line">    self.audio.play()</span><br><span class="line">    this.classList.remove(&#39;pause&#39;)</span><br><span class="line">    this.classList.add(&#39;playing&#39;)</span><br><span class="line">    this.querySelector(&#39;use&#39;).setAttribute(&#39;xlink:href&#39;, &#39;#icon-pause&#39;)&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="关于如何实现点击标签切换到歌词页的功能"><a href="#关于如何实现点击标签切换到歌词页的功能" target="_blank" rel="noopener" class="headerlink" title="关于如何实现点击标签切换到歌词页的功能"></a>关于如何实现点击标签切换到歌词页的功能</h2><ol>
+<li>先把页面设置成200vw，</li>
+<li>整个页面只显示左边100vw的页面，</li>
+<li>当点击标签：执行<code>transform: translateX（-100vw)</code></li>
+<li>这时候再点击另一个标签时：滚到第一页。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2020/04/17/华为音乐播放器学习思考/" target="_blank" rel="noopener">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -483,81 +568,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="2020/02/28/VUE数据响应式/" target="_blank" rel="noopener">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2020/02/27/hello-world/" target="_blank" rel="noopener">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="2020/02/27/hello-world/" target="_blank" rel="noopener" class="archive-article-date">
-  	<time datetime="2020-02-27T02:39:47.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" target="_blank" rel="noopener" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" target="_blank" rel="noopener" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" target="_blank" rel="noopener" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" target="_blank" rel="noopener" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" target="_blank" rel="noopener" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2020/02/27/hello-world/" target="_blank" rel="noopener">展开全文 >></a>
         </p>
       
 
